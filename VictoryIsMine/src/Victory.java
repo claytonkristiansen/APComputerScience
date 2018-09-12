@@ -21,7 +21,7 @@ public class Victory
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
-		String asdfas = PrintMessage();
+		PrintMessage();
 	}
 
 }
