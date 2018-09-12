@@ -1,0 +1,26 @@
+
+public class Victory 
+{
+	public static String PrintMessage()
+	{
+		String message = "////////////////////////////////////////////\n"
+				+ 		 "|| Victory is mine! ||"
+				+ 		 "\\\\\\\\\\\\\\\\\\\\\\"
+				+ 		 "|| Victory is mine! ||"
+				+		 "\\\\\\\\\\\\\\\\\\\\\\"
+		 		+		 "|| Victory is mine! ||"
+				+		 "\\\\\\\\\\\\\\\\\\\\\\"
+		 		+		 "|| Victory is mine! ||"
+				+		 "\\\\\\\\\\\\\\\\\\\\\\"
+		 		+		 "|| Victory is mine! ||"
+		 		+        "\\\\\\\\\\\\\\\\\\\\\\";
+		return messsage;
+		
+	}
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+}
