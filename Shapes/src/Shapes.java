@@ -1,4 +1,9 @@
 
+//Clayton Kristiansen
+//Goal Sheet 1 "Shapes"
+//9-14-2018
+//AP Computer Science P.3
+
 public class Shapes 
 {
 	public static String PrintMessage()
