@@ -13,7 +13,15 @@ public class Quadratic
 		double [] roots = new double[2];
 		roots[0] = ((-1 * B + Math.sqrt(B * B - (4 * A * C))) / (2 * A));
 		roots[1] = ((-1 * B - Math.sqrt(B * B - (4 * A * C))) / (2 * A));
-		System.out.print("The roots of " + A + "x^2 + " + B + "x + " + C + " are:\n" + roots[0] + "\nand\n" + roots[1]);
+		if(Double.isNaN(roots[0]) || Double.isNaN(roots[1]))
+		{
+			System.out.println("This quadratic does not have any roots");
+		}
+		else
+		{
+			System.out.print("The roots of " + A + "x^2 + " + B + "x + " + C + " are:\n" + roots[0] + "\nand\n" + roots[1]);
+		}
+		
 		return roots;
 	}
 
