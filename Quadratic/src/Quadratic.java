@@ -3,9 +3,11 @@
 //Goal Sheet 2 (Quadratic)
 //AP Computer Science P.3
 
+import java.util.Scanner;
+
 public class Quadratic 
 {
-	public static double[] QuadraticFunction(double A, double B, double C)
+	public static double[] QuadraticFunction(double A, double B, double C) //Prints out the roots of a quadratic with given Coeficients
 	{
 		//double radical = Math.sqrt(B * B - (4 * A * C));
 		double [] roots = new double[2];
@@ -17,7 +19,14 @@ public class Quadratic
 
 	public static void main(String[] args) 
 	{
-		QuadraticFunction(3,10,2);
+		Scanner reader = new Scanner (System.in);
+		System.out.print("A: ");
+		double A = Double.parseDouble(reader.nextLine());
+		System.out.print("B: ");
+		double B = Double.parseDouble(reader.nextLine());
+		System.out.print("C: ");
+		double C = Double.parseDouble(reader.nextLine());
+		QuadraticFunction(A,B,C); 
 	}
 
 }
