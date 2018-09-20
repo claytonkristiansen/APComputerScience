@@ -3,6 +3,8 @@
 //Goal Sheet 2 (Stairs)
 //AP Computer Science P.3
 
+import java.util.Scanner;
+
 public class Stairs 
 {
 	public static void PrintStairs(int numStairs)
@@ -56,7 +58,9 @@ public class Stairs
 	
 	public static void main(String[] args) 
 	{
-		PrintStairs(7);
+		Scanner reader = new Scanner(System.in);
+		System.out.print("Enter the number of stairs: ");
+		PrintStairs((Integer.parseInt(reader.nextLine())));
 	}
 
 }
