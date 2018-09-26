@@ -1,5 +1,9 @@
-import java.util.Random;
+//Clayton Kristiansen
+//Goal Sheet 3 "Random Lines"
+//9-26-2018
+//AP Computer Science P.3
 
+import java.util.Random;
 
 public class RandomLines 
 {
