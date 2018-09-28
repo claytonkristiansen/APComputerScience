@@ -3,7 +3,7 @@
 //9-26-2018
 //AP Computer Science P.3
 
-import java.util.Scanner;
+import java.util.*;
 
 
 public class RomanNumerals 
@@ -210,6 +210,11 @@ public class RomanNumerals
 			}
 			number = number % 10;
 		}
+		if(number >= 9)
+		{
+			System.out.print("IX");
+			number = 0;
+		}
 		if(number >= 5)
 		{
 			System.out.print("V");
@@ -234,6 +239,63 @@ public class RomanNumerals
 		}
 	}
 	
+	public static void RomanNumeralsMapping(int number)
+	{
+		int onesP = number % 10;
+		number = number / 10;
+		int tensP = (number % 10) * 10;
+		number = number /10;
+		int hundredsP = (number % 10) * 100;
+		number = number / 10;
+		int thousandsP = (number % 10) * 1000;
+		
+		Map<Integer, String> RomanMap = new HashMap<Integer, String>()
+		{
+			{
+				put(0, "");
+				put(1, "I");
+				put(2, "II");
+				put(3, "III");
+				put(4, "IV");
+				put(5, "V");
+				put(6, "VI");
+				put(7, "VII");
+				put(8, "VIII");
+				put(9, "IX");
+				put(10, "X");
+				put(20, "XX");
+				put(30, "XXX");
+				put(40, "XL");
+				put(50, "L");
+				put(60, "LX");
+				put(70, "LXX");
+				put(80, "LXXX");
+				put(90, "XC");
+				put(100, "C");
+				put(200, "CC");
+				put(300, "CCC");
+				put(400, "CD");
+				put(500, "D");
+				put(600, "DC");
+				put(700, "DCC");
+				put(800, "DCCC");
+				put(900, "CM");
+				put(1000, "M");
+				put(2000, "MM");
+				put(3000, "MMM");
+				put(4000, "MMMM");
+				put(5000, "MMMMM");
+				put(6000, "MMMMMM");
+				put(7000, "MMMMMMM");
+				put(8000, "MMMMMMMM");
+				put(9000, "MMMMMMMMM");
+			}
+		};
+		System.out.print(RomanMap.get(thousandsP) + RomanMap.get(hundredsP) + RomanMap.get(tensP) + RomanMap.get(onesP));
+		System.out.print("\nones: " + onesP + "\ntens: " + tensP + "\nhundreds: " + hundredsP + "\nthousands: " + thousandsP);
+		
+	}
+	
 	public static void main(String[] args) 
 	{
 		Scanner reader = new Scanner(System.in);
@@ -243,5 +305,7 @@ public class RomanNumerals
 		RomanNumeralsFunction(number); //Output from algorithm one
 		System.out.print("\nAlgorithm two found: ");
 		OtherRomanNumerals(number); //Outpit from algorithm two
+		System.out.print("\nAlgorithm three found: ");
+		RomanNumeralsMapping(number);
 	}
 }
