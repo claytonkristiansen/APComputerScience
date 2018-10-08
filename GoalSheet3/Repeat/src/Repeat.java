@@ -9,12 +9,14 @@ import java.util.*;
 public class Repeat 
 {
 	
-	public static void repl(String string, int numberOfRepititions)
+	public static String repl(String string, int numberOfRepititions)
 	{
+		String outputString = "";
 		for(int i = 0; i < numberOfRepititions; i++)
 		{
-			System.out.print(string);
+			outputString = outputString + string;
 		}
+		return outputString;
 	}
 	
 	public static void main(String[] args) 
@@ -24,6 +26,6 @@ public class Repeat
 		String stringInput = reader.nextLine();
 		System.out.print("Enter the number of repititions: ");
 		int repititionsInput = reader.nextInt();
-		repl(stringInput, repititionsInput);
+		System.out.print(repl(stringInput, repititionsInput));
 	}
 }
