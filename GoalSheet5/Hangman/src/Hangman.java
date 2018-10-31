@@ -28,7 +28,39 @@ public class Hangman
 				"starwars",
 				"installation",
 				"interesting",
-				"impossible"
+				"impossible",
+				"miyoshi",
+				"ashwin",
+				"pumpkin",
+				"peanut",
+				"butter",
+				"bowl",
+				"seagulls",
+				"halloween",
+				"skeleton",
+				"preguntas",
+				"dishwasher",
+				"fridge",
+				"candy",
+				"cup",
+				"Banana",
+				"hangman",
+				"medication",
+				"terciary",
+				"awkward",
+				"bagpipes",
+				"gazebo",
+				"banishment",
+				"kayak",
+				"zombie",
+				"bibliopole",
+				"cyanic",
+				"effervesence",
+				"electron",
+				"proton",
+				"neutron",
+				"fibula"
+				
 		};
 	static String RandomWord() //Returns a random word
 	{
@@ -136,6 +168,10 @@ public class Hangman
 	{
 		String word = RandomWord();
 		m_wordGuessed = new char[word.length()]; //Initializing the character array that stores letters guessed
+		for(int i = 0; i < m_wordGuessed.length; i++) //Iterates through entire character array
+		{
+			m_wordGuessed[i] = '-'; //Sets each member of the array to a dash
+		}
 		
 		boolean exitCondition = false;
 		
