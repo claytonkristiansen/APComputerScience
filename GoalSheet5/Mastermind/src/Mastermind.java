@@ -18,13 +18,7 @@ public class Mastermind
 	
 	public static int[] IntToArray(int number)
 	{
-		int tempNumber = number;
-		int length = 0;
-		for(; tempNumber > 0; length++)
-		{
-			tempNumber /= 10;
-		}
-		int[] master = new int[length];
+		int[] master = new int[4];
 		master[3] = number % 10;
 		number /= 10;
 		master[2] = number % 10;
@@ -39,23 +33,39 @@ public class Mastermind
 	public static boolean GuessNumber(int number1, int number2)
 	{
 		int numCorrectDigits = 0;
+		int numWrongSpot = 0;
 		boolean isMatch = (number1 == number2);
+		int[] originalArray = IntToArray(number1);
+		int[] guessedArray = IntToArray(number2);
 		if(isMatch)
 		{
 			return true;
 		}
-		else if(number2 >= 1000 && number2 <= 9999)
+		else if(originalArray.length == 4 && guessedArray.length == 4)
 		{
-			int[] master = IntToArray(number1);
-			int[] guessr = IntToArray(number2);
-			for(int i = 0; i < master.length && i < guessr.length; i++)
+			for(int i = 0; i < originalArray.length && i < guessedArray.length; i++)
 			{
-				if(master[i] == guessr[i])
+				if(originalArray[i] == guessedArray[i])
 				{
 					numCorrectDigits++;
 				}
 			}
-			System.out.println("Number of correct digits: " + numCorrectDigits);
+			System.out.println("Number in correct spot: " + numCorrectDigits);
+			for(int i = 0; i < guessedArray.length; i++)
+			{
+				for(int k = 0; k < originalArray.length; k++)
+				{
+					if(k != i && originalArray[i] != guessedArray[i] && originalArray[k] != guessedArray[k])
+					{
+						if(originalArray[k] == guessedArray[i])
+						{
+							numWrongSpot++;
+							break; //Once one part of the gussed string is used it breaks and never goes back
+						}
+					}
+				}
+			}
+			System.out.println("Correct number but in wrong spot: " + numWrongSpot);
 			return false;
 		}
 		else
@@ -68,6 +78,7 @@ public class Mastermind
 	public static void main(String[] args) 
 	{
 		int number = RandomNumber_Inclusive(1000, 9999);
+		number = 6684; //Test 4567
 		Scanner reader = new Scanner(System.in);
 		do
 		{
