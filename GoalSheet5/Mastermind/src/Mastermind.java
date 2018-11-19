@@ -1,5 +1,5 @@
 //Clayton Kristiansen
-//Goal Sheet 1 "Mastermind"
+//Goal Sheet 5 "Mastermind"
 //11-09-2018
 //AP Computer Science P.1
 
