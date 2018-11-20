@@ -1,3 +1,8 @@
+//Clayton Kristiansen
+//Goal Sheet 6 "Ticket" -Ticket.java
+//11-23-2018
+//AP Computer Science P.1
+
 
 public class Ticket 
 {
