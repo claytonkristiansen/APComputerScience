@@ -1,2 +1,2 @@
 This is the writing I have to test this code
-So far the number of characters is 64
+So far the number of characters is 65
