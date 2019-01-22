@@ -98,66 +98,6 @@ public class Picture extends SimplePicture
     }
   }
   
-  public void onlyBlue()
-  {
-	  Pixel[][] pixels = this.getPixels2D();
-	    for (Pixel[] rowArray : pixels)
-	    {
-	      for (Pixel pixelObj : rowArray)
-	      {
-	        pixelObj.setGreen(0);
-	        pixelObj.setRed(0);
-	      }
-	    }
-  }
-  	//Here changed tab spacing, it was driving me crazy
-  	public void negate()
-  	{
-	  	Pixel[][] pixels = this.getPixels2D();
-	    for (Pixel[] rowArray : pixels)
-	    {
-	    	for (Pixel pixelObj : rowArray)
-	    	{
-	    		pixelObj.setGreen(255 - pixelObj.getGreen());
-	    		pixelObj.setRed(255 - pixelObj.getRed());
-	    		pixelObj.setBlue(255 - pixelObj.getBlue());
-	    	}
-	    }
-  	}	
-  	
-  	public void grayScale()
-  	{
-	  	Pixel[][] pixels = this.getPixels2D();
-	    for (Pixel[] rowArray : pixels)
-	    {
-	    	for (Pixel pixelObj : rowArray)
-	    	{
-	    		int average = (pixelObj.getGreen() + pixelObj.getRed() + pixelObj.getBlue()) / 3;
-	    		pixelObj.setGreen(average);
-	    		pixelObj.setRed(average);
-	    		pixelObj.setBlue(average);
-	    	}
-	    }
-  	}	
-  	
-  	public void fixUnderwater()
-  	{
-	  	Pixel[][] pixels = this.getPixels2D();
-	    for (Pixel[] rowArray : pixels)
-	    {
-	    	for (Pixel pixelObj : rowArray)
-	    	{
-	    		if(pixelObj.getRed() < 20)
-	    		{
-	    			pixelObj.setRed(255);
-	    			pixelObj.setBlue(0);
-	    			pixelObj.setGreen(0);
-	    		}
-	    	}
-	    }
-  	}	
-  	
-  //Back to regular stupid tab spacing
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
