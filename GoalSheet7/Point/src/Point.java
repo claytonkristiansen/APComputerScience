@@ -20,25 +20,11 @@ public class Point implements Comparable<Point>
 	{
 		if(m_y != o.m_y)
 		{
-			if(m_y < o.m_y)
-			{
-				return -1;
-			}
-			else
-			{
-				return 1;			
-			}
+			return m_y - o.m_y;
 		}
 		else if(m_x != o.m_x)
 		{
-			if(m_x < o.m_x)
-			{
-				return -1;
-			}
-			else
-			{
-				return 1;			
-			}
+			return m_x - o.m_x;
 		}
 		else
 		{

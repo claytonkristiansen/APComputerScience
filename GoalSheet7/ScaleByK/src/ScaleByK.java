@@ -7,7 +7,7 @@ import java.util.*;
 
 public class ScaleByK 
 {
-	static void scaleByK(ArrayList<Integer> array)
+	static ArrayList<Integer> scaleByK(ArrayList<Integer> array)
 	{
 		for(int index = 0; index < array.size();)
 		{
@@ -20,6 +20,7 @@ public class ScaleByK
 			index++;
 		}
 		System.out.print(array);
+		return array;
 	}
 	public static void main(String[] args) 
 	{

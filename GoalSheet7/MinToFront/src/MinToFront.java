@@ -8,7 +8,7 @@ import java.util.*;
 public class MinToFront 
 {
 	
-	public static void BringMinToFront(ArrayList<Integer> array)
+	public static ArrayList<Integer> BringMinToFront(ArrayList<Integer> array)
 	{
 		int storeNum = array.get(0);
 		int index = 0;
@@ -23,6 +23,7 @@ public class MinToFront
 		array.remove(index);
 		array.add(0, storeNum);
 		System.out.println(array);
+		return array;
 	}
 
 	public static void main(String[] args) 
