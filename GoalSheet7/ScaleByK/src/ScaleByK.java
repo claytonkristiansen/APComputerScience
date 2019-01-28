@@ -12,12 +12,19 @@ public class ScaleByK
 		for(int index = 0; index < array.size();)
 		{
 			Integer var = array.get(index);
-			for(int i = 0; i < var - 1; i++)
+			if(var > 0)
 			{
-				array.add(index, var);
+				for(int i = 0; i < var - 1; i++)
+				{
+					array.add(index, var);
+					index++;
+				}
 				index++;
 			}
-			index++;
+			else
+			{
+				array.remove(index);
+			}
 		}
 		System.out.print(array);
 		return array;

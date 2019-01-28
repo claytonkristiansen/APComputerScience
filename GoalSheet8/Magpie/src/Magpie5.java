@@ -1,3 +1,10 @@
+//Clayton Kristiansen
+//Goal Sheet 9 "Magpie Modifications"
+//01-25-2018
+//AP Computer Science P.1
+//Meaningful contributions involved adding new responses and complex transformation of input
+//to create more interesting and meaningful responses.
+
 import java.util.Random;
 
 /**
@@ -49,16 +56,44 @@ public class Magpie5
 		{
 			response = "Tell me more about your family.";
 		}
+		else if (findKeyword(statement, "die") >= 0|| findKeyword(statement, "kill") >= 0)
+		{
+			response = "Well that's not very nice";
+		}
+		else if (findKeyword(statement, "smell") >= 0)
+		{
+			response = "What do you smell?";
+		}
+		else if (findKeyword(statement, "I love you") >= 0)
+		{
+			response = "I love you too, but I just don't think we are right for each other";
+		}
 
 		// Responses which require transformations
 		else if (findKeyword(statement, "I want to", 0) >= 0)
 		{
 			response = transformIWantToStatement(statement);
 		}
+		else if (findKeyword(statement, "What do you think about", 0) >= 0)
+		{
+			response = transformWhatDoYouThinkAboutStatement(statement);
+		}
+		else if (findKeyword(statement, "I think", 0) >= 0)
+		{
+			response = transformIThinkStatement(statement);
+		}
 		//  Part of student solution
 		else if (findKeyword(statement, "I want", 0) >= 0)
 		{
 			response = transformIWantStatement(statement);
+		}
+		else if (findKeyword(statement, "I love", 0) >= 0)
+		{
+			response = transformILoveStatement(statement);
+		}
+		else if (findKeyword(statement, "I", 0) == 0 && findKeyword(statement, "you", 1) >= 0)
+		{
+			response = transformIYouStatement(statement);
 		}
 
 		else
@@ -68,8 +103,7 @@ public class Magpie5
 			// pattern
 			int psn = findKeyword(statement, "you", 0);
 
-			if (psn >= 0
-					&& findKeyword(statement, "me", psn) >= 0)
+			if (psn >= 0 && findKeyword(statement, "me", psn) >= 0)
 			{
 				response = transformYouMeStatement(statement);
 			}
@@ -137,6 +171,58 @@ public class Magpie5
 		int psn = findKeyword (statement, "I want", 0);
 		String restOfStatement = statement.substring(psn + 6).trim();
 		return "Would you really be happy if you had " + restOfStatement + "?";
+	}
+	
+	/**
+	 * Take a statement with "I love <something>." and transform it into 
+	 * "Why do you love <something>?"
+	 * @param statement the user statement, assumed to contain "I love"
+	 * @return the transformed statement
+	 */
+	private String transformILoveStatement(String statement)
+	{
+		//  Remove the final period, if there is one
+		statement = statement.trim();
+		String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}
+		int psn = findKeyword (statement, "I love", 0);
+		String restOfStatement = statement.substring(psn + 6).trim();
+		return "Why do you love " + restOfStatement + "?";
+	}
+	private String transformWhatDoYouThinkAboutStatement(String statement)
+	{
+		//  Remove the final period, if there is one
+		statement = statement.trim();
+		String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}
+		int psn = findKeyword (statement, "What do you think about", 0);
+		String restOfStatement = statement.substring(psn + 23).trim();
+		return "I prefer not to share my opinions about " + restOfStatement;
+	}
+	private String transformIThinkStatement(String statement)
+	{
+		//  Remove the final period, if there is one
+		statement = statement.trim();
+		String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}
+		int psn = findKeyword (statement, "I think", 0);
+		String restOfStatement = statement.substring(psn + 7, statement.indexOf(" ", psn + 8)).trim();
+		return "Wow, I didn't know you thought that way about " + restOfStatement;
 	}
 	
 	/**

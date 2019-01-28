@@ -59,7 +59,7 @@ public class Magpie4
 		}
 		else if (findKeyword(statement, "I", 0) == 0 && findKeyword(statement, "you", 1) >= 0)
 		{
-				response = transformIYouStatement(statement);
+			response = transformIYouStatement(statement);
 		}
  
 		else
