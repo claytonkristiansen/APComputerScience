@@ -7,19 +7,27 @@ import java.util.*;
 
 public class ScaleByK 
 {
-	static void scaleByK(ArrayList<Integer> array)
+	static ArrayList<Integer> scaleByK(ArrayList<Integer> array)
 	{
 		for(int index = 0; index < array.size();)
 		{
 			Integer var = array.get(index);
-			for(int i = 0; i < var - 1; i++)
+			if(var > 0)
 			{
-				array.add(index, var);
+				for(int i = 0; i < var - 1; i++)
+				{
+					array.add(index, var);
+					index++;
+				}
 				index++;
 			}
-			index++;
+			else
+			{
+				array.remove(index);
+			}
 		}
 		System.out.print(array);
+		return array;
 	}
 	public static void main(String[] args) 
 	{

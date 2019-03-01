@@ -16,8 +16,8 @@ public class Ticket
 	{
 		return m_price;
 	}
-	public void println()
+	public String toString()
 	{
-		System.out.println("Number: " + m_number + ", Price: $" + m_price);
+		return "Number: " + m_number + ", Price: $" + m_price;
 	}
 }
