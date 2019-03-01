@@ -1,3 +1,8 @@
+//Clayton Kristiansen
+//Goal Sheet 10 "SelectionSortAlgorithm"
+//03-01-2018
+//AP Computer Science P.1
+
 import java.util.Arrays;
 
 public class SelectionSortAlgorithm 

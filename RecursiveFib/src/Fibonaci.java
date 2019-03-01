@@ -1,3 +1,8 @@
+//Clayton Kristiansen
+//Goal Sheet 10 "Fibonaci"
+//03-01-2018
+//AP Computer Science P.1
+
 import java.util.Scanner;
 
 public class Fibonaci 

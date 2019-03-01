@@ -1,3 +1,7 @@
+//Clayton Kristiansen
+//Goal Sheet 10 "RecursiveSquares"
+//03-01-2018
+//AP Computer Science P.1
 
 public class Squares 
 {

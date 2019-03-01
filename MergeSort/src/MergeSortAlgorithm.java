@@ -1,12 +1,15 @@
+//Clayton Kristiansen
+//Goal Sheet 10 "MergeSort"
+//03-01-2018
+//AP Computer Science P.1
+
 import java.util.*;
-
-
 
 public class MergeSortAlgorithm 
 {
-	public static LinkedList<Character> SplitLinkedList(LinkedList<Character> originalList, 
-														LinkedList<Character> firstHalfOutput, 
-														LinkedList<Character> secondHalfOutput)
+	public static LinkedList<String> SplitLinkedList(LinkedList<String> originalList, 
+													 LinkedList<String> firstHalfOutput, 
+													 LinkedList<String> secondHalfOutput)
 	{
 		int length = originalList.size();
 		int firstHalfLength = length / 2;
@@ -25,14 +28,15 @@ public class MergeSortAlgorithm
 		return originalList;
 	} 
 	
-	public static LinkedList<Character> MergeLinkedLists(LinkedList<Character> first, LinkedList<Character> second)
+	public static LinkedList<String> MergeLinkedLists(LinkedList<String> first, 
+													  LinkedList<String> second)
 	{
-		LinkedList<Character> result = new LinkedList<Character>();
+		LinkedList<String> result = new LinkedList<String>();
 		for(int k = first.size() - 1; k >= 0; --k)
 		{
 			for(int i = second.size() - 1; i >= 0 && k >=0;) //THEN CHECK FOR SIZE > 0 HERE
 			{
-				if(first.get(k) > second.get(i)) //CAN TOTALLY USE GET LAST YOU IDIOT --Future Clayton
+				if(first.get(k).toLowerCase().charAt(0) > second.get(i).toLowerCase().charAt(0)) //CAN TOTALLY USE GET LAST YOU IDIOT --Future Clayton
 				{
 					result.add(0, first.get(k));
 					first.remove(k);
@@ -62,35 +66,35 @@ public class MergeSortAlgorithm
 	}
 	
 	
-	public static LinkedList<Character> MergeSortString(LinkedList<Character> charArray)
+	public static LinkedList<String> MergeSortString(LinkedList<String> StringArray)
 	{
-		int length = charArray.size();
+		int length = StringArray.size();
 //		if(length == 2)
 //		{
-//			if(charArray.get(0) > charArray.get(1))
+//			if(StringArray.get(0) > StringArray.get(1))
 //			{
-//				char tempInt = charArray.get(0);
-//				charArray.set(0, charArray.get(1));
-//				charArray.set(1, tempInt);
+//				char tempInt = StringArray.get(0);
+//				StringArray.set(0, StringArray.get(1));
+//				StringArray.set(1, tempInt);
 //			
 //			}
 //			
-//			return charArray;
+//			return StringArray;
 //		}
 		
 		
 		if(length >= 2)
 		{
-			LinkedList<Character> firstArray = new LinkedList<Character>();
-			LinkedList<Character> secondArray = new LinkedList<Character>();
-			SplitLinkedList(charArray, firstArray, secondArray);
+			LinkedList<String> firstArray = new LinkedList<String>();
+			LinkedList<String> secondArray = new LinkedList<String>();
+			SplitLinkedList(StringArray, firstArray, secondArray);
 			//System.out.print(firstArray); System.out.print(secondArray + "\n");
 			return MergeLinkedLists(MergeSortString(firstArray), (MergeSortString(secondArray)));
 		}
 		else
 		{
-			System.out.print(charArray + "\n");
-			return charArray;
+			System.out.print(StringArray + "\n");
+			return StringArray;
 		}
 		
 		
@@ -98,16 +102,22 @@ public class MergeSortAlgorithm
 	
 	public static void main(String[] args) 
 	{
-		LinkedList<Character> characters = new LinkedList<Character>();
-		characters.add('c');
-		characters.add('g');
-		characters.add('t');
-		characters.add('p');
-		characters.add('a');
-		characters.add('b');
-		characters.add('r');
-		System.out.println(characters);
-		System.out.println(MergeSortString(characters));
+		LinkedList<String> Strings = new LinkedList<String>();
+		Strings.add("Capitalism");
+		Strings.add("goats");
+		Strings.add("treachery");
+		Strings.add("Pineapple");
+		Strings.add("Apple");
+		Strings.add("bunker");
+		Strings.add("Ryzan");
+		Strings.add("I want to eat some chicken");
+		Strings.add("Doughnuts are food that makes me feel good");
+		Strings.add("Carrots are food that makes me feel bad");
+		Strings.add("Why do people have to bruch their teeth? Shouldn't evolution have solved that problem?");
+		Strings.add("I'll just wander around and help folks out!");
+		
+		System.out.println(Strings);
+		System.out.println(MergeSortString(Strings));
 	}
 
 }
