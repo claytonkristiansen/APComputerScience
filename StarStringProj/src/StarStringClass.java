@@ -1,3 +1,7 @@
+//Clayton Kristiansen
+//Goal Sheet 11 "StarString"
+//03-15-2019
+//AP Computer Science P.1
 
 import java.util.*;
 
