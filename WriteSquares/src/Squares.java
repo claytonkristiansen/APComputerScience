@@ -9,15 +9,30 @@ public class Squares
 	{
 		if(n > 0)
 		{
-			if((n * n) % 2 != 0)
+//			if((n * n) % 2 == 0)
+//			{
+//				--n;
+//			}
+//
+//			if((n * n) % 2 != 0)
+//			{
+//				System.out.print(n * n + ", ");
+//				RecursiveSquares(n - 2);
+//				++n;
+//			}
+//			if((n * n) % 2 == 0)
+//			{
+//				System.out.print(n * n + ", ");
+//			}
+			if ((n * n) % 2 != 0)
 			{
 				System.out.print(n * n + ", ");
-				return RecursiveSquares(n - 1);
+				RecursiveSquares(n - 1);
 			}
-			else
+			else if ((n * n) % 2 == 0)
 			{
+				RecursiveSquares(n - 1);
 				System.out.print(n * n + ", ");
-				return RecursiveSquares(n - 1);
 			}
 			
 		}
@@ -27,7 +42,7 @@ public class Squares
 	
 	public static void main(String[] args) 
 	{
-		RecursiveSquares(4);
+		RecursiveSquares(10);
 	}
 
 }

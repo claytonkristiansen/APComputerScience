@@ -24,7 +24,18 @@ public class Fibonaci
 		System.out.print("Fibonnaci index: ");
 		Scanner reader = new Scanner(System.in);
 		int input = reader.nextInt();
-		System.out.println(RecursiveFib(input));
+		for(int i = 0; i <= input; ++i)
+		{
+			if(i != input)
+			{
+				System.out.print(RecursiveFib(i) + ", ");
+			}
+			else
+			{
+				System.out.print(RecursiveFib(i));
+			}
+		}
+		
 	}
 
 }
