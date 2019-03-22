@@ -22,7 +22,7 @@ public class Dictionary implements BinarySearch
 		int left = 0;
 		int right = stringArray.size();
 		int midpoint = right / 2;
-		for(;midpoint != left && midpoint != right;)
+		for(;midpoint >= left && midpoint <= right;)
 		{
 			if(target.compareTo(stringArray.get(midpoint)) == 0)
 			{
@@ -35,8 +35,15 @@ public class Dictionary implements BinarySearch
 			}
 			else if(target.compareTo(stringArray.get(midpoint)) < 0)
 			{
-				right = midpoint;
-				midpoint = midpoint - ((midpoint - left) / 2);
+				if(midpoint == 1) 
+				{
+					midpoint = 0;
+				}
+				else
+				{
+					right = midpoint;
+					midpoint = midpoint - ((midpoint - left) / 2);
+				}
 			}
 		}
 		return -1;
@@ -45,15 +52,23 @@ public class Dictionary implements BinarySearch
 	public static void main(String[] args) 
 	{
 		Scanner reader = new Scanner(System.in);
+		Scanner userReader = new Scanner(System.in);
 		PrintStream writer = new PrintStream(System.out);
 		try
 		{
 			File inputFile = new File("Assets/dictionary.txt");
-			File outputFile = new File("Assets/output.txt");
 			reader = new Scanner(inputFile);
-			writer = new PrintStream(outputFile);
-			String searchWord = "impregnation";
-			System.out.println("Index of " + searchWord + " is: " + SearchStringArray(searchWord, FileToArrayList(reader)));
+			System.out.print("First word: ");
+			String searchWord1 = userReader.next();
+			System.out.print("Seond word: ");
+			String searchWord2 = userReader.next();
+			ArrayList<String> stringArray = FileToArrayList(reader);
+			int searchWordIndex1 = SearchStringArray(searchWord1, stringArray);
+			int searchWordIndex2 = SearchStringArray(searchWord2, stringArray);
+			System.out.println("There are " + 
+					(searchWordIndex2 - searchWordIndex1 - 1) +
+					" words between " + searchWord1 + " and " + searchWord2
+					);
 			reader.close();
 			writer.close();
 		}
