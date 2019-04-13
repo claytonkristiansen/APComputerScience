@@ -1,3 +1,7 @@
+//Clayton Kristiansen
+//Goal Sheet 12 "DictionaryBinarySearch"
+//03-29-2019
+//AP Computer Science P.1
 
 import java.util.*;
 import java.io.*;
@@ -18,7 +22,6 @@ public class Dictionary implements BinarySearch
 	
 	public static int SearchStringArray(String target, ArrayList<String> stringArray)
 	{
-		int index = 0;
 		int left = 0;
 		int right = stringArray.size();
 		int midpoint = right / 2;
@@ -35,15 +38,10 @@ public class Dictionary implements BinarySearch
 			}
 			else if(target.compareTo(stringArray.get(midpoint)) < 0)
 			{
-				if(midpoint == 1) 
-				{
-					midpoint = 0;
-				}
-				else
-				{
-					right = midpoint;
-					midpoint = midpoint - ((midpoint - left) / 2);
-				}
+			
+				right = midpoint;
+				midpoint = left + ((midpoint - left) / 2);
+			
 			}
 		}
 		return -1;
@@ -51,13 +49,12 @@ public class Dictionary implements BinarySearch
 	
 	public static void main(String[] args) 
 	{
-		Scanner reader = new Scanner(System.in);
 		Scanner userReader = new Scanner(System.in);
 		PrintStream writer = new PrintStream(System.out);
 		try
 		{
 			File inputFile = new File("Assets/dictionary.txt");
-			reader = new Scanner(inputFile);
+			Scanner reader = new Scanner(inputFile);
 			System.out.print("First word: ");
 			String searchWord1 = userReader.next();
 			System.out.print("Seond word: ");
@@ -77,7 +74,7 @@ public class Dictionary implements BinarySearch
 	        e.printStackTrace();
 	    }
 		
-		
+		userReader.close();
 		
 		System.out.println("Done");
 	}

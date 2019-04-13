@@ -50,6 +50,6 @@ public class Sequence
 	
 	public static void main(String[] args) 
 	{
-		WriteSequence(5);
+		WriteSequence(6);
 	}
 }

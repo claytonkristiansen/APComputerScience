@@ -166,6 +166,16 @@ public class PictureTester
 	  beach.explore();
   }
   
+  /** Method to test chromakey */
+  public static void testChromakey()
+  {
+    Picture mark = new Picture("blue-mark.jpg");
+    Picture moon = new Picture("moon-surface.jpg");
+    mark.explore();
+    mark.chromakey(moon);
+    mark.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -179,7 +189,7 @@ public class PictureTester
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
-    testFixUnderwater();
+    //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
 	//testMirrorHorizontal();
@@ -195,7 +205,7 @@ public class PictureTester
     //testEdgeDetection();
     //testEdgeDetection2();
     //testEdgeDetection3();
-    //testChromakey();
+    testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();

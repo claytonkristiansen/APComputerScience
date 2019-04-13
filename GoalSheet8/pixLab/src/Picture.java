@@ -506,6 +506,30 @@ public void edgeDetection3(int colorDiff)
     }
   }
 }
+
+/** Method to replace the blue background with
+ * the pixels in the newBack picture
+ * @param newBack the picture to copy from
+ */
+public void chromakey(Picture newBack)
+{
+ Pixel fromPixel = null;
+ Pixel toPixel = null;
+ Pixel[][] toPixels = this.getPixels2D();
+ Pixel[][] fromPixels = newBack.getPixels2D();
+
+ for(int i = 0; i < toPixels.length; i++)
+ {
+	 for(int k = 0; k < toPixels[i].length; k++)
+	 {
+		 if(toPixels[i][k].getBlue() >= toPixels[i][k].getRed())
+		 {
+			 toPixels[i][k].setColor(fromPixels[i][k].getColor());
+		 }
+	 }
+ }
+
+}
   
   /* Main method for testing - each class in Java can have a main 
    * method 
