@@ -185,7 +185,7 @@ public class PictureTester
     // to run
     //testZeroBlue();
     //testKeepOnlyBlue();
-    //testKeepOnlyRed();
+    //testKeexa"/pOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
@@ -198,7 +198,7 @@ public class PictureTester
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
-    //testMirrorDiagonal();
+    //testMirrorDiagonal(); bde4
     //testCollage();
     //testMyCollage();
     //testCopyPart();
