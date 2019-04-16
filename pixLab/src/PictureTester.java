@@ -184,8 +184,8 @@ public class PictureTester
     Picture message = new Picture("msg.jpg");
     beach.encode(message);
     beach.explore();
-    //Picture decoded = beach.decode();
-    //decoded.explore();
+    Picture decoded = beach.decode();
+    decoded.explore();
   }
   
   /** Main method for testing.  Every class can have a main

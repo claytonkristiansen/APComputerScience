@@ -543,24 +543,25 @@ public void edgeDetection3(int colorDiff)
 	    Pixel[][] currPixels = this.getPixels2D();
 	    Pixel currPixel = null;
 	    Pixel messagePixel = null;
-
-	    for(int i = 0; i < this.getHeight() && i < messagePict.getHeight(); i++)
+	    
+	    for(int i = 0; i < currPixels.length; i++)
 	    {
-	    	for(int k = 0; k < this.getWidth() && k < messagePict.getWidth(); k++)
+	    	for(int k = 0; k < currPixels[i].length; k++)
 	    	{
-	    		if(this.getPixel(k, i).getRed() % 2 == 0)
+	    		if(currPixels[i][k].getRed() % 2 == 1)
 	    		{
-	    			if(messagePict.getPixel(k, i).getColor().equals(Color.black))
-	    			{
-	    				this.getPixel(k, i).setRed(this.getPixel(k, i).getRed() + 1);
-	    			}
+	    			currPixels[i][k].setRed(currPixels[i][k].getRed() - 1);
 	    		}
-	    		else if(this.getPixel(k, i).getRed() % 2 == 1)
+	    	}
+	    }
+
+	    for(int i = 0; i < currPixels.length && i < messagePixels.length; i++)
+	    {
+	    	for(int k = 0; k < currPixels[i].length && k < messagePixels[i].length; k++)
+	    	{
+	    		if(!(messagePixels[i][k].colorDistance(Color.white) < 50))
 	    		{
-	    			if(!messagePict.getPixel(k, i).getColor().equals(Color.black))
-	    			{
-	    				this.getPixel(k, i).setRed(this.getPixel(k, i).getRed() - 1);
-	    			}
+	    			currPixels[i][k].setRed(currPixels[i][k].getRed() + 1);
 	    		}
 	    	}
 	    }
@@ -581,7 +582,20 @@ public void edgeDetection3(int colorDiff)
 	    Pixel messagePixel = null;
 	    Picture messagePicture = new Picture(height,width);
 	    Pixel[][] messagePixels = messagePicture.getPixels2D();
-	    /** your code here */
+	    for(int i = 0; i < pixels.length; i++)
+	    {
+	    	for(int k = 0; k < pixels[i].length; k++)
+	    	{
+	    		if(pixels[i][k].getRed() % 2 == 1)
+	    		{
+	    			messagePixels[i][k].setColor(Color.BLACK);
+	    		}
+	    		else
+	    		{
+	    			messagePixels[i][k].setColor(Color.WHITE);
+	    		}
+	    	}
+	    }
 
 	    return messagePicture;
 	  }
