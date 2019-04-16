@@ -511,25 +511,80 @@ public void edgeDetection3(int colorDiff)
  * the pixels in the newBack picture
  * @param newBack the picture to copy from
  */
-public void chromakey(Picture newBack)
-{
- Pixel fromPixel = null;
- Pixel toPixel = null;
- Pixel[][] toPixels = this.getPixels2D();
- Pixel[][] fromPixels = newBack.getPixels2D();
+	public void chromakey(Picture newBack)
+	{
+		Pixel fromPixel = null;
+ 		Pixel toPixel = null;
+ 		Pixel[][] toPixels = this.getPixels2D();
+ 		Pixel[][] fromPixels = newBack.getPixels2D();
 
- for(int i = 0; i < toPixels.length; i++)
- {
-	 for(int k = 0; k < toPixels[i].length; k++)
-	 {
-		 if(toPixels[i][k].getBlue() >= toPixels[i][k].getRed())
-		 {
-			 toPixels[i][k].setColor(fromPixels[i][k].getColor());
-		 }
-	 }
- }
+ 		for(int i = 0; i < toPixels.length; i++)
+ 		{
+	 		for(int k = 0; k < toPixels[i].length; k++)
+	 		{
+		 		if(toPixels[i][k].getBlue() >= toPixels[i][k].getRed())
+		 		{
+			 		toPixels[i][k].setColor(fromPixels[i][k].getColor());
+				}
+	 		}
+ 		}
 
-}
+	}
+	
+	/** Hide a black and white message in the current
+	    * picture by changing the red to even and then
+	    * setting it to odd if the message pixel is black 
+	    * @param messagePict the picture with a message
+	    */
+	  public void encode(Picture messagePict)
+	  {
+
+	    Pixel[][] messagePixels = messagePict.getPixels2D();
+	    Pixel[][] currPixels = this.getPixels2D();
+	    Pixel currPixel = null;
+	    Pixel messagePixel = null;
+
+	    for(int i = 0; i < this.getHeight() && i < messagePict.getHeight(); i++)
+	    {
+	    	for(int k = 0; k < this.getWidth() && k < messagePict.getWidth(); k++)
+	    	{
+	    		if(this.getPixel(k, i).getRed() % 2 == 0)
+	    		{
+	    			if(messagePict.getPixel(k, i).getColor().equals(Color.black))
+	    			{
+	    				this.getPixel(k, i).setRed(this.getPixel(k, i).getRed() + 1);
+	    			}
+	    		}
+	    		else if(this.getPixel(k, i).getRed() % 2 == 1)
+	    		{
+	    			if(!messagePict.getPixel(k, i).getColor().equals(Color.black))
+	    			{
+	    				this.getPixel(k, i).setRed(this.getPixel(k, i).getRed() - 1);
+	    			}
+	    		}
+	    	}
+	    }
+
+	  }
+	  
+	  /**
+	   * Method to decode a message hidden in the
+	   * red value of the current picture
+	   * @return the picture with the hidden message
+	   */
+	  public Picture decode()
+	  {
+	    Pixel[][] pixels = this.getPixels2D();
+	    int height = this.getHeight();
+	    int width = this.getWidth();
+	    Pixel currPixel = null;
+	    Pixel messagePixel = null;
+	    Picture messagePicture = new Picture(height,width);
+	    Pixel[][] messagePixels = messagePicture.getPixels2D();
+	    /** your code here */
+
+	    return messagePicture;
+	  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
