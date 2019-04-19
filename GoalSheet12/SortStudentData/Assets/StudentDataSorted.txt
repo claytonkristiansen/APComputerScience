@@ -1,7 +1,7 @@
-Tisdale, Jacob, 904567, 0.9789, A
 Subbaraman, Ashwin, 922839, 1.0008, A
 Miyoshi, Michael, 111011, 0.9874, A
 Chalakova, Diana, 902930, 0.9843, A
+Tisdale, Jacob, 904567, 0.9789, A
 Kristiansen, Clayton, 903487, 0.8723, B+
 Burford, Quinn, 905790, 0.7822, C+
 Patel, Vivek, 908070, 0.6987, D+

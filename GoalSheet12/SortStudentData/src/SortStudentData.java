@@ -27,7 +27,7 @@ public class SortStudentData
 			{
 				System.out.println(s.ToString());
 			}
-			Student.SortStudentData(students, SORT_BY_TYPE.LETTER_GRADE);
+			Student.SortStudentData(students, SORT_BY_TYPE.GRADE_PERCENTAGE);
 			for(Student it : students)
 			{
 				writer.write((it.ToString() + "\n").getBytes());

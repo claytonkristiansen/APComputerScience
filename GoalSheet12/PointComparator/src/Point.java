@@ -43,18 +43,6 @@ public class Point implements Comparable<Point>
 	@Override
 	public int compareTo(Point o) 
 	{
-		if(this.Distance(new Point(0,0)) < o.Distance(new Point(0,0)))
-		{
-			return -1;
-		}
-		else if(this.Distance(new Point(0,0)) == o.Distance(new Point(0,0)))
-		{
-			return 0;
-		}
-		else if(this.Distance(new Point(0,0)) > o.Distance(new Point(0,0)))
-		{
-			return 1;
-		}
-		return 0;
+		return (int)(this.Distance(new Point(0,0)) - o.Distance(new Point(0,0)));
 	}
 }

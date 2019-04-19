@@ -9,8 +9,8 @@ public class PointComparator
 {
 	public static void main(String[] args) 
 	{
-		Point point1 = new Point(3, 23);
-		Point point2 = new Point(4, 24);
+		Point point1 = new Point(4, 24);
+		Point point2 = new Point(3, 23);
 		System.out.println("Point 1: " + point1.toString());
 		System.out.println("Point 2: " + point2.toString());
 		if(point1.compareTo(point2) < 0)
