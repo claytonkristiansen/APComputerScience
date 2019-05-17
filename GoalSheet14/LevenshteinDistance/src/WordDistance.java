@@ -1,3 +1,5 @@
+//Clayton Kristiansen
+
 import java.util.*;
 import java.io.*;
 
@@ -413,8 +415,8 @@ public class WordDistance
 //		mapo.put("apple", value)
 		
 		ArrayList<String> usedWordsList = new ArrayList<String>();
-		String word1 = "plus";
-		String word2 = "minus";
+		String word1 = "taco";
+		String word2 = "bell";
 		LinkedList<String> testList = FindPathIteratively(word1, word2);
 		//testList.add(0, word1);
 		System.out.println(testList);
