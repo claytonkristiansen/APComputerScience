@@ -1,3 +1,8 @@
+//Clayton Kristiansen
+//Goal Sheet 14 "isReverse"
+//05-21-2019
+//AP Computer Science P.1
+
 
 public class StringComparator 
 {
@@ -50,8 +55,8 @@ public class StringComparator
 	
 	public static void main(String[] args) 
 	{
-		String string1 = "super";
-		String string2 = "repusd";
+		String string1 = "hannah";
+		String string2 = "hannah";
 		System.out.println(IsReverse(string1, string2));
 	}
 

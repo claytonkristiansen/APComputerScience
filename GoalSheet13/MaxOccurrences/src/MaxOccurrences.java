@@ -1,3 +1,9 @@
+//Clayton Kristiansen
+//Goal Sheet 13 "MaxOccurrences"
+//05-21-2019
+//AP Computer Science P.1
+
+
 import java.util.*;
 
 public class MaxOccurrences

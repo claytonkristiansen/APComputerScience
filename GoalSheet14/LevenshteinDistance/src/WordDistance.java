@@ -1,4 +1,7 @@
 //Clayton Kristiansen
+//Goal Sheet 14 "Levenshtein Distance"
+//05-21-2019
+//AP Computer Science P.1
 
 import java.util.*;
 import java.io.*;
@@ -415,8 +418,8 @@ public class WordDistance
 //		mapo.put("apple", value)
 		
 		ArrayList<String> usedWordsList = new ArrayList<String>();
-		String word1 = "taco";
-		String word2 = "bell";
+		String word1 = "sox";
+		String word2 = "socks";
 		LinkedList<String> testList = FindPathIteratively(word1, word2);
 		//testList.add(0, word1);
 		System.out.println(testList);

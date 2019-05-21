@@ -1,3 +1,8 @@
+//Clayton Kristiansen
+//Goal Sheet 14 "Levenshtein Distance"
+//05-21-2019
+//AP Computer Science P.1
+
 import java.util.*;
 
 public class MergeSort 
